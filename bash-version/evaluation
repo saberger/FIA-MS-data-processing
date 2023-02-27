@@ -1,0 +1,27 @@
+find . -name "* *" -type d | rename 's/ /_/g'
+find . -name "* *" -type f | rename 's/ /_/g'
+for d in */
+do
+  var=${d:0:10}
+  mkdir $var
+  var2=$d
+  for file in "$var2"/*/*.pdf
+  do
+   pdftotext $file
+   filename="${file%.*}"
+   mv "$filename".txt "$var"/"${filename:0-3}".txt
+  done
+  
+  for file in "$var"/*.txt
+  do
+    count=$(sed -n '/^Signal 2/,/^Signal 4/p' $file | grep -c Total)
+    if [ ${count} -eq 2 ]; then
+      sed -n '/^Signal 2/,/^Signal 4/p' $file | sed -n '/Totals/{N;N;p}' | grep -E '([0-9]+\.[0-9]*|\.?[0-9]+)([eE][+-][0-9]+)?' 
+    else
+    sed -n '/^Signal 2/,/^Signal 4/p' $file | sed -n '/Totals/{N;N;p}'| grep -E '([0-9]+\.[0-9]*|\.?[0-9]+)([eE][+-][0-9]+)?'
+    echo 0
+    fi >> output.log
+  done
+  awk -v col=2 '{if(NR%col){printf "%s ",$0 }else {printf "%s\n",$0}}' output.log > $var-out.log
+  rm output.log
+done

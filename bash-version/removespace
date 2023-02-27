@@ -1,0 +1,3 @@
+#!/bin/bash
+ find . -name "* *" -type d | perl-rename 's/ /_/g'
+ find . -name "* *" -type f | perl-rename 's/ /_/g'

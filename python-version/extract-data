@@ -1,0 +1,13 @@
+find . -name "* *" -type d | rename 's/ /_/g'
+find . -name "* *" -type f | rename 's/ /_/g'
+for d in */
+do
+  var=${d:0:10}
+  mkdir $var
+  var2=$d
+  for file in "$var2"/*/*.pdf
+  do
+   pdftotext $file
+   filename="${file%.*}"
+   mv "$filename".txt "$var"/"${filename:0-3}".txt
+  done
