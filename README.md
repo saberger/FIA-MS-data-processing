@@ -1,7 +1,7 @@
 # FIA-MS
 ## [Paper on FIA-MS](insertlinkhere)
 
-Bash and Python script for data-extraction from FIA-MS reports on a Shimadzu HPLC-MS system for HTS for unlimited number of samples (in this case 96).
+Bash and Python script for data-extraction from FIA-MS reports on a Agilent HPLC-MS system for HTS for unlimited number of samples (in this case 96).
 It is recommended to use the bash script. The python-version can be used to just extract the data from the corresponding text-files after they were extracted with the bash-script _extract-data_.
 The script _evaluation_ converts the pdf-report to a text file, using pdftotext (a command line tool). From this text files, the corresponding mass signals are extracted and printed to a simple output file, containing the mass signals in columns. This columns can then be pasted into an excel-template for further data evaluation.
 
