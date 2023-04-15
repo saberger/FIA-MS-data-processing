@@ -1,5 +1,5 @@
 # FIA-MS
-## [Paper on FIA-MS](insertlinkhere)
+## [Paper on FIA-MS](https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cbic.202300170)
 
 Bash and Python script for data-extraction from FIA-MS reports on a Agilent HPLC-MS system for HTS for unlimited number of samples (in this case 96).
 It is recommended to use the bash script. The python-version can be used to just extract the data from the corresponding text-files after they were extracted with the bash-script _extract-data_.
