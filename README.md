@@ -57,7 +57,10 @@ bash ./evaluation
 The log-file which you receive as an output can be opened with a simple text-editor.
 
 ## Citation
-Add bibtex here.
+~~~bash
+ @article{2023, title={Rapid, Label‐Free Screening of Diverse Biotransformations by Flow‐Injection Mass Spectrometry}, ISSN={1439-7633}, url={http://dx.doi.org/10.1002/cbic.202300170}, DOI={10.1002/cbic.202300170}, journal={ChemBioChem}, publisher={Wiley}, author={Berger, Sarah A.
+and Grimm, Christopher and Nyenhuis, Jonathan and Payer, Stefan E. and Oroz-Guinea, Isabel and Schrittwieser, Joerg H. and Kroutil, Wolfgang}, year={2023}, month={Apr} }
+~~~
 
 ## License
 MIT
